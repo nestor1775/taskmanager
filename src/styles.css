@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+mat-sidenav-container {
+  height: 100vh;
+}
+
+mat-sidenav {
+  width: 2px;
+}
+
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+}
+
+mat-nav-list a {
+  text-decoration: none;
+  color: inherit;
+}

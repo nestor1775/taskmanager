@@ -40,3 +40,21 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar archivos de configuración de IDE (puedes agregar más si usas otros editores)
+.idea/
+.vscode/
+
+# Ignorar otros archivos temporales comunes
+*.log
+*.bak
+*.swp
+
+# Ignorar archivos de configuración de OS
+.DS_Store
+Thumbs.db
+
