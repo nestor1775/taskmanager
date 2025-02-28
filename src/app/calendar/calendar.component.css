@@ -1,73 +1,86 @@
 /* Contenedor principal del calendario */
 .calendar {
-    display: grid;
-    grid-template-columns: 1fr; /* Para que el calendario ocupe toda la columna */
-    padding: 10px;
-    max-width: 80%;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  max-width: 90%; /* Ajuste para más espacio en pantallas grandes */
+  margin: 0 auto;
+}
 
-  }
-  
-  /* Estilo para los botones de navegación */
-  .nav-button {
-    margin-left: 5rem;
-    margin-right: 5rem;
-    font-size: 18px;
-    padding: 15px;
-    cursor: pointer;
-    background-color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    transition: background-color 0.2s;
-  }
-  
-  /* Efecto al pasar el ratón sobre los botones */
-  .nav-button:hover {
-    background-color: #e0e0e0;
-  }
-  
-  /* Estilos para el encabezado del calendario */
-  .calendar-header {
-    grid-column: span 7; /* El encabezado abarca toda la fila */
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Estilo para los botones de navegación */
+.nav-button {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 18px;
+  padding: 12px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
 
-  }
+/* Efecto al pasar el ratón sobre los botones */
+.nav-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Estilos para el encabezado del calendario */
+.calendar-header {
+  grid-column: span 7; /* El encabezado abarca toda la fila */
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cuerpo del calendario (los días) */
+.calendar-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días de la semana */
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+/* Estilo de cada día */
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  position: relative; /* Para superponer el número de tareas */
+}
+
+/* Efecto al pasar el ratón sobre un día */
+.calendar-day:hover {
+  background-color: #e0e0e0;
+}
+
+.calendar-day span {
+  text-align: center;
+}
+
+/* Estilo para el nombre de la materia y número de tareas */
+.task-info {
+  display: inline-block;
+  margin: 1px;
+  font-size: 10px;
+  background-color: rgba(255, 162, 162, 0.7);
+  border-radius: 5px;
+  font-weight: normal;
   
-  /* Cuerpo del calendario (los días) */
-  .calendar-body {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 7 columnas (para los 7 días de la semana) */
-    gap: 15px;
-    margin: 1rem;
-  }
-  
-  /* Estilo de cada día */
-  .calendar-day {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    width: 100px;
-    height: 100px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Efecto al pasar el ratón sobre un día */
-  .calendar-day:hover {
-    background-color: #e0e0e0;
-  }
-  
-  .calendar-day span {
-    text-align: center;
-  }
-  
+}
+
+

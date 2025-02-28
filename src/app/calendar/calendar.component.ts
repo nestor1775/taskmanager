@@ -1,62 +1,54 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { TaskService } from '../services/task.service'; // ✅ Importamos el servicio
 
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.css'],
-  imports: [
-      NgFor
-    ]
+  imports: [NgFor],
 })
 export class CalendarComponent implements OnInit {
-  currentDate: Date = new Date();  // Guardamos la fecha actual para la navegación
-  days: number[] = [];  // Para almacenar los días del mes actual
+  currentDate: Date = new Date();
+  days: number[] = [];
+  tasks: any[] = []; // ✅ Lista de tareas
 
-  constructor() {}
+  constructor(private taskService: TaskService) {} // ✅ Inyectamos el servicio
 
   ngOnInit() {
+    this.tasks = this.taskService.getTasks(); // ✅ Obtenemos las tareas del servicio
     this.generateCalendar();
   }
 
-  // Genera el calendario basado en el mes y año actuales
   generateCalendar() {
-    const currentMonth = this.currentDate.getMonth();  // Obtener el mes actual
-    const currentYear = this.currentDate.getFullYear();  // Obtener el año actual
-
-    // Obtener el primer día del mes (para la alineación en la grilla)
-    const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
-    // Obtener el último día del mes
-    const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
-    
-    const totalDaysInMonth = lastDayOfMonth.getDate();  // Total de días en el mes actual
-
-    // Crear el arreglo con los días del mes
-    this.days = [];
-    for (let i = 1; i <= totalDaysInMonth; i++) {
-      this.days.push(i);
-    }
-  }
-
-  // Método para ir al mes anterior
-  previousMonth() {
-    this.currentDate.setMonth(this.currentDate.getMonth() - 1);  // Restamos un mes
-    this.generateCalendar();  // Regeneramos el calendario
-  }
-
-  // Método para ir al siguiente mes
-  nextMonth() {
-    this.currentDate.setMonth(this.currentDate.getMonth() + 1);  // Sumamos un mes
-    this.generateCalendar();  // Regeneramos el calendario
-  }
-
-  // Método para obtener el nombre del mes
-  getMonthName(): string {
     const currentMonth = this.currentDate.getMonth();
-    const months = [
-      'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
-      'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
-    ];
-    return months[currentMonth] + ' ' + this.currentDate.getFullYear();
+    const currentYear = this.currentDate.getFullYear();
+    const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+
+    this.days = Array.from({ length: lastDayOfMonth }, (_, i) => i + 1);
+  }
+
+  // ✅ Método para obtener las tareas de un día específico
+  getTasksForDay(day: number): any[] {
+    return this.tasks.filter(task => {
+      const taskDate = new Date(task.dueDate);
+      return taskDate.getDate() === day && taskDate.getMonth() === this.currentDate.getMonth();
+    });
+  }
+
+  previousMonth() {
+    this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+    this.generateCalendar();
+  }
+
+  nextMonth() {
+    this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+    this.generateCalendar();
+  }
+
+  getMonthName(): string {
+    const months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+    return months[this.currentDate.getMonth()] + ' ' + this.currentDate.getFullYear();
   }
 }
