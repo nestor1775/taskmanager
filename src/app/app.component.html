@@ -9,8 +9,8 @@
         <img  src="https://img.icons8.com/?size=100&id=36625&format=png&color=000000" alt="Polymer Icon" />
       </a>
     </div>
-      <div class="menuButtons"><a mat-list-item href="#">Calendario 📆</a></div>
-      <div class="menuButtons"><a mat-list-item href="#">Materias 📚 </a></div>
+      <div class="menuButtons"><a mat-list-item routerLink="/calendar">Calendario 📆</a></div>
+      <div class="menuButtons"><a mat-list-item routerLink="/tasks">Materias 📚 </a></div>
       <div class="menuButtons"><a mat-list-item href="#">Cerrar sesión ➡️</a></div>
 
     </mat-nav-list>
@@ -18,10 +18,10 @@
 
   <!-- Contenido principal -->
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
-      <!-- <button mat-icon-button (click)="sidenav.toggle()" aria-label="Abrir menú">
-        <mat-icon>menu</mat-icon>
-      </button> -->
-    </mat-toolbar>
+    <div >
+      <router-outlet></router-outlet>
+    </div>
+    
+    
   </mat-sidenav-content>
 </mat-sidenav-container>

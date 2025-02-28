@@ -1,0 +1,17 @@
+<div class="calendar">
+    <!-- Contenedor del encabezado -->
+    <div class="calendar-header">
+      <!-- Botones para navegar entre meses -->
+      <button class="nav-button" (click)="previousMonth()">&#60;</button>
+      <h2>{{ getMonthName() }}</h2>
+      <button class="nav-button" (click)="nextMonth()">&#62;</button>
+    </div>
+  
+    <!-- Cuerpo del calendario con los días del mes -->
+    <div class="calendar-body">
+      <div *ngFor="let day of days" class="calendar-day">
+        <span>{{ day }}</span>
+      </div>
+    </div>
+  </div>
+  

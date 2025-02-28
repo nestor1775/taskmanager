@@ -7,11 +7,12 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { provideHttpClient } from '@angular/common/http';
+import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideAnimations(),
-    provideRouter([]),
+    provideRouter(routes),
     provideHttpClient(),
     MatSidenavModule,
     MatToolbarModule,

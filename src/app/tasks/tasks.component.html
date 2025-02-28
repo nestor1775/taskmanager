@@ -1,0 +1,22 @@
+<div class="tasks-container">
+    <div *ngFor="let task of tasks" class="task-card">
+      <mat-card class="task-card-content " [style.backgroundColor]="getColor(task.subject)" >
+        <mat-card-header [style.backgroundColor]="getColor(task.subject)" >
+            
+            <mat-card-title>{{ task.subject }}</mat-card-title>
+        
+        </mat-card-header>
+
+        
+        <mat-card-content >
+          <p>{{ task.description }}</p>
+          <p>⚠️{{ task.title }}</p>
+          <mat-divider></mat-divider>
+          <p>⌚{{ task.dueDate }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+<!-- 
+  [style.border-left]="getColorForSubject(task.subject) + ' 5px solid' -->
+  
