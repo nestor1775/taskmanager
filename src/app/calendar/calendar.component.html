@@ -7,12 +7,15 @@
 
   <div class="calendar-body">
     <div *ngFor="let day of days" class="calendar-day">
-      <span>{{ day }}</span>
+      <span class="day-number">{{ day }}</span>
+        
+        
+        <div *ngFor="let task of getTasksForDay(day)" class="task-info">
+          <span>{{ task.subject }} 
+            <span class="task-counter">{{ getTasksForDay(day).length }}</span>
+          </span>
+        </div>
 
-      <!-- ✅ Muestra las tareas por día -->
-      <div *ngFor="let task of getTasksForDay(day)" class="task-info">
-        <p>{{ task.subject }} ({{ getTasksForDay(day).length }})</p>
       </div>
     </div>
-  </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { TaskService } from '../services/task.service'; // ✅ Importamos el servicio
+import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-calendar',
@@ -11,12 +11,12 @@ import { TaskService } from '../services/task.service'; // ✅ Importamos el ser
 export class CalendarComponent implements OnInit {
   currentDate: Date = new Date();
   days: number[] = [];
-  tasks: any[] = []; // ✅ Lista de tareas
+  tasks: any[] = []; 
 
-  constructor(private taskService: TaskService) {} // ✅ Inyectamos el servicio
+  constructor(private taskService: TaskService) {} 
 
   ngOnInit() {
-    this.tasks = this.taskService.getTasks(); // ✅ Obtenemos las tareas del servicio
+    this.tasks = this.taskService.getTasks(); 
     this.generateCalendar();
   }
 
@@ -28,7 +28,7 @@ export class CalendarComponent implements OnInit {
     this.days = Array.from({ length: lastDayOfMonth }, (_, i) => i + 1);
   }
 
-  // ✅ Método para obtener las tareas de un día específico
+
   getTasksForDay(day: number): any[] {
     return this.tasks.filter(task => {
       const taskDate = new Date(task.dueDate);

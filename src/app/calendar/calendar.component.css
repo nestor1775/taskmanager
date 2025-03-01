@@ -1,13 +1,52 @@
-/* Contenedor principal del calendario */
 .calendar {
   display: grid;
   grid-template-columns: 1fr;
   padding: 10px;
-  max-width: 90%; /* Ajuste para más espacio en pantallas grandes */
+  max-width: 90%;
   margin: 0 auto;
 }
 
-/* Estilo para los botones de navegación */
+.calendar-day {
+  position: relative; 
+  width: 100px; 
+  height: 100px; 
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.1);
+  position: relative; 
+}
+
+.calendar-day:hover {
+  background-color: #eaeaea;
+}
+
+.calendar-day span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+.day-number {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: rgb(0, 0, 0);
+  padding: 4px 8px;
+
+}
+
+
 .nav-button {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -18,17 +57,17 @@
   border: none;
   border-radius: 10px;
   transition: background-color 0.2s;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Efecto al pasar el ratón sobre los botones */
+
 .nav-button:hover {
   background-color: #e0e0e0;
 }
 
-/* Estilos para el encabezado del calendario */
+
 .calendar-header {
-  grid-column: span 7; /* El encabezado abarca toda la fila */
+  grid-column: span 7; 
   text-align: center;
   font-size: 24px;
   font-weight: bold;
@@ -37,50 +76,47 @@
   align-items: center;
 }
 
-/* Cuerpo del calendario (los días) */
+
 .calendar-body {
   display: grid;
-  grid-template-columns: repeat(7, 1fr); /* 7 columnas para los días de la semana */
+  grid-template-columns: repeat(7, 1fr); 
   gap: 10px;
   margin: 1rem 0;
 }
 
-/* Estilo de cada día */
-.calendar-day {
+
+
+
+
+.task-info {
+  margin-bottom: 2px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ffffff;
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.2s;
-  box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  position: relative; /* Para superponer el número de tareas */
+  background-color: rgb(251, 173, 173);
+  border-radius: 5px;
 }
 
-/* Efecto al pasar el ratón sobre un día */
-.calendar-day:hover {
-  background-color: #e0e0e0;
+.task-info:first-of-type {
+  margin-top: 20px; 
 }
 
-.calendar-day span {
-  text-align: center;
-}
-
-/* Estilo para el nombre de la materia y número de tareas */
-.task-info {
+.task-info span {
   display: inline-block;
   margin: 1px;
   font-size: 10px;
-  background-color: rgba(255, 162, 162, 0.7);
-  border-radius: 5px;
   font-weight: normal;
   
 }
+
+
+.task-info span .task-counter {
+  background-color: #ff5566 !important;
+  color: white;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: inline-block;
+}
+
 
 
