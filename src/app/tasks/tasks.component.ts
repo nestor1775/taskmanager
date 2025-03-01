@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgFor } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
-import { TaskService } from '../services/task.service';  // Importamos el servicio
+import { TaskService } from '../services/task.service';  
 import { MatDivider } from '@angular/material/divider';
 
 
-// Definimos la interfaz Task
 interface Task {
   title: string;
-  description: string;  // Agregar la propiedad description
+  description: string;  
   dueDate: string;
   subject: string;
 }
