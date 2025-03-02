@@ -1,7 +1,14 @@
 html, body {
   height: 100%;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Times New Roman', serif;
+}
+
+.page-title {
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  color: #0e0000;
+  margin-top: 20px;
 }
 
 mat-sidenav-container {
@@ -9,16 +16,39 @@ mat-sidenav-container {
 }
 
 mat-sidenav {
-  width: 2px;
+  width: 250px; 
 }
 
 mat-toolbar {
   display: flex;
+  justify-content: space-between; 
   align-items: center;
   padding: 0 16px;
+  background-color: #bd1414; 
+  color: white;
 }
 
 mat-nav-list a {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+mat-nav-list a mat-icon {
+  margin-right: 10px;
+}
+
+.menuButtons {
+  padding: 10px;
+}
+
+mat-sidenav {
+  background-color: #01020c; 
+  color: white;
+}
+
+mat-sidenav-content {
+  background-color: #f5f5f5;
 }

@@ -3,25 +3,30 @@
   <mat-sidenav #sidenav mode="side" opened>
 
     <mat-nav-list>
-
-      <div class="logoContainer">
-        <a  id="logoPolymer" mat-list-item href="#">
-        <img  src="https://img.icons8.com/?size=100&id=36625&format=png&color=000000" alt="Polymer Icon" />
-      </a>
-    </div>
-      <div class="menuButtons"><a mat-list-item routerLink="/calendar">Calendario 📆</a></div>
-      <div class="menuButtons"><a mat-list-item routerLink="/tasks">Materias 📚 </a></div>
-      <div class="menuButtons"><a mat-list-item href="#">Cerrar sesión ➡️</a></div>
-
+      <div class="menuButtons">
+        <a mat-list-item routerLink="/register">
+          <mat-icon>person_add</mat-icon> Registro de sesión
+        </a>
+      </div>
+      <div class="menuButtons">
+        <a mat-list-item routerLink="/login">
+          <mat-icon>login</mat-icon> Inicio de sesión
+        </a>
+      </div>
+      <div class="menuButtons">
+        <a mat-list-item routerLink="/home">
+          <mat-icon>home</mat-icon> Home
+        </a>
+      </div>
+      <div class="menuButtons">
+        <a mat-list-item routerLink="/homework">
+          <mat-icon>book</mat-icon> Materia
+        </a>
+      </div>
     </mat-nav-list>
   </mat-sidenav>
 
-
   <mat-sidenav-content>
-    <div >
-      <router-outlet></router-outlet>
-    </div>
-    
-    
+    <div><router-outlet></router-outlet></div>
   </mat-sidenav-content>
 </mat-sidenav-container>

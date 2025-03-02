@@ -1,0 +1,40 @@
+.register-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(188, 3, 3, 0.1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .user-icon {
+    font-size: 25px;  
+    color: #01020c;  
+  }
+  
+  .input-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .remember-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .register-btn {
+    width: 100%;
+    border-radius: 30px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #bd1414;
+    color: rgb(2, 0, 0);
+    text-transform: uppercase;
+  }
+  

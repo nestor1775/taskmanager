@@ -1,9 +1,12 @@
 import { Routes } from '@angular/router';
-import { TasksComponent } from './tasks/tasks.component';
-import { CalendarComponent } from './calendar/calendar.component';
-
+import { RegisterComponent } from './register/register.component'; 
+import { LoginComponent } from './login/login.component'; 
+import { HomeComponent } from './home/home.component'; 
+//import { HomeworkComponent } from './homework/homework.component'; 
 
 export const routes: Routes = [
-    { path: 'tasks', component: TasksComponent },
-    { path: 'calendar', component: CalendarComponent }
+    { path: 'register', component: RegisterComponent },  
+    { path: 'login', component: LoginComponent },  
+    { path: 'home', component: HomeComponent },  
+    //{ path: 'homework', component: HomeworkComponent },  
 ];
