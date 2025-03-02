@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/proyectof",
+            "outputPath": "dist/taskmanager",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "proyectof:build:production"
+              "buildTarget": "taskmanager:build:production"
             },
             "development": {
-              "buildTarget": "proyectof:build:development"
+              "buildTarget": "taskmanager:build:development"
             }
           },
           "defaultConfiguration": "development"
